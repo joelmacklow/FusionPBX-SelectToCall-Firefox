@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FusionPBX SelectToCall Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 600px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"], input[type="password"], input[type="url"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 3px;
+        }
+        
+        .save-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .save-button:hover {
+            background-color: #45a049;
+        }
+        
+        .status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .status.success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+        
+        .status.error {
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+        }
+        
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .section h2 {
+            margin-top: 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>FusionPBX SelectToCall Options</h1>
+    
+    <form id="options-form">
+        <div class="section">
+            <h2>FusionPBX Server Settings</h2>
+            
+            <div class="form-group">
+                <label for="domain">Domain/Server URL:</label>
+                <input type="url" id="domain" placeholder="http://pbx.example.com">
+                <div class="help-text">Enter your FusionPBX server URL (e.g., http://pbx.example.com)</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Your FusionPBX username">
+                <div class="help-text">Your FusionPBX login username</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Your FusionPBX password">
+                <div class="help-text">Your FusionPBX login password</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Call Settings</h2>
+            
+            <div class="form-group">
+                <label for="src">Source Extension:</label>
+                <input type="text" id="src" placeholder="1001">
+                <div class="help-text">Your extension number that will be called first</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="dest_cid_name">Destination Caller ID Name:</label>
+                <input type="text" id="dest_cid_name" placeholder="Web Dialer">
+                <div class="help-text">Name to show on outbound calls (optional)</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="dest_cid_number">Destination Caller ID Number:</label>
+                <input type="text" id="dest_cid_number" placeholder="">
+                <div class="help-text">Number to show on outbound calls (optional)</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="ringback">Ringback:</label>
+                <input type="text" id="ringback" placeholder="">
+                <div class="help-text">Ringback tone (optional)</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Advanced Options</h2>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="auto_answer">
+                    Auto Answer
+                </label>
+                <div class="help-text">Automatically answer your extension when the call is placed</div>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="rec">
+                    Record Calls
+                </label>
+                <div class="help-text">Record the outbound calls</div>
+            </div>
+        </div>
+        
+        <button type="submit" class="save-button">Save Options</button>
+        
+        <div id="status" class="status"></div>
+    </form>
+    
+    <script src="options.js"></script>
+</body>
+</html>
