@@ -6,7 +6,7 @@ A Firefox extension that allows you to easily dial phone numbers through FusionP
 
 - Select any phone number on a webpage
 - Right-click to see "Dial [phone number]" option in context menu
-- Automatically validates phone number format (7, 10, 11, or 12 digits)
+- Automatically validates phone number format (7, 9, 10, 11, or 12 digits)
 - Supports various phone number formats (dots, dashes, spaces, parentheses)
 - Configurable auto-answer and call recording options
 - Visual notifications for call status
